@@ -3,6 +3,9 @@
 Aplicatie: English B2 Trainer. Interfata in romana, continut englez cu traducere romana.
 Locatie: `~/Desktop/english-b2-trainer`.
 
+- Aplicatia online (PWA): https://biggerro.github.io/english-b2-trainer/
+- Depozit GitHub: https://github.com/biggerro/english-b2-trainer (public, contul biggerro)
+
 ## Stare curenta: toate cele 8 faze sunt terminate
 
 | Faza | Continut | Stare |
@@ -13,7 +16,7 @@ Locatie: `~/Desktop/english-b2-trainer`.
 | 3 | Cele 12 structuri de gramatica B2 | gata |
 | 4 | srs.js, flashcards, teste de tema, cautare, cuvinte marcate | gata |
 | 5 | Toate cele 30 de teme de vocabular, 3000 de intrari | gata |
-| 6 | manifest.json, sw.js, iconite, banner iOS, buton de instalare | gata local; publicarea pe GitHub Pages ramane de facut de utilizator |
+| 6 | manifest.json, sw.js, iconite, banner iOS, buton de instalare, publicat pe GitHub Pages | gata, verificat online |
 | 7 | diagnostic.js, mock.js, traseu de 12 saptamani, panou complet, mod intunecat | gata |
 
 ## Cifre
@@ -38,21 +41,28 @@ Locatie: `~/Desktop/english-b2-trainer`.
   scadente, generarea testului de tema, export si import cu imbinare, testul de diagnostic,
   simularea cu cronometru, cautarea globala, modul intunecat.
 
-## Ce ramane de facut de utilizator
+## Verificare online (11.09.2026)
 
-1. **Verificare pe laptop**: deschide `index.html` din folder in Chrome, Edge si Firefox.
-2. **Publicare pe GitHub Pages** (necesita contul tau GitHub):
-   - creeaza un depozit nou, public, de exemplu `english-b2-trainer`;
-   - incarca tot continutul acestui folder in radacina depozitului;
-   - Settings, Pages, Source: Deploy from a branch, branch `main`, folder `/ (root)`;
-   - dupa doua minute aplicatia este la `https://<utilizator>.github.io/english-b2-trainer/`.
-3. **Instalare pe telefon**: deschide adresa de mai sus, apoi
+- Publicat pe GitHub Pages; toate fisierele raspund cu 200.
+- Service worker activ, cache `e360-b2-v1` cu toate cele 62 de fisiere, deci aplicatia merge
+  offline dupa prima deschidere.
+- `#/dev/verificare` complet verde si pe varianta online.
+
+## Ce ramane de verificat de utilizator (checkpoint Faza 6)
+
+1. **Pe laptop, din folder**: deschide `index.html` in Chrome, Edge si Firefox.
+2. **Instalare pe telefon**: deschide https://biggerro.github.io/english-b2-trainer/ si
    - iPhone, in Safari: butonul de partajare, apoi "Add to Home Screen";
    - Android, in Chrome: meniul cu trei puncte, apoi "Install app".
-4. **Test offline**: dupa prima deschidere, pune telefonul pe modul avion si verifica faptul ca
-   lectiile si temele se incarca.
-5. **Mutarea progresului**: Panou, "Exporta progresul" pe un dispozitiv si "Importa un backup"
-   pe celalalt.
+3. **Test offline**: dupa prima deschidere pe telefon, modul avion, apoi deschide aplicatia de pe
+   ecranul principal si verifica o lectie si o tema.
+4. **Mutarea progresului**: Panou, "Exporta progresul" pe telefon si "Importa un backup" pe laptop.
+
+## Actualizari ulterioare
+
+Dupa orice modificare: creste versiunea din `sw.js` (`e360-b2-v2`), apoi
+`git add -A && git commit -m "..." && git push`. GitHub Pages republica in circa un minut, iar
+telefonul preia versiunea noua la urmatoarea deschidere cu internet.
 
 ## Decizii luate in lipsa unui raspuns (sectiunea 14 din GOAL.md)
 
@@ -60,7 +70,8 @@ Locatie: `~/Desktop/english-b2-trainer`.
    en-US din Panou, sectiunea Setari.
 2. **Tema 30, evenimente si marketing**: construita de la zero, cu vocabular de organizare de
    evenimente, cabina foto, furnizori, contracte si promovare. Se poate completa oricand.
-3. **GitHub**: nu am creat niciun cont si niciun depozit. Pasii sunt mai sus.
+3. **GitHub**: publicat pe contul existent biggerro. Commit-urile folosesc adresa noreply de la
+   GitHub, ca adresa de email personala sa nu apara public.
 4. **Sectiunea "Writing B2"** (email formal, eseu, raport): nu a fost inclusa, GOAL.md o pune
    intr-o faza ulterioara. Vocabularul necesar exista deja in tema 29.
 
