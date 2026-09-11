@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>English B2 Trainer</title>
+<meta name="description" content="Antrenament complet de limba engleza pana la nivel B2.">
+<meta name="theme-color" content="#0f2a4a">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="B2 Trainer">
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+<link rel="icon" href="./assets/icons/icon-192.png" type="image/png">
+<link rel="stylesheet" href="./assets/fonts/inter.css">
+<link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+<a class="skip-link" href="#main">Sari la continut</a>
+
+<header class="topbar">
+  <button class="topbar-btn" id="btn-menu" type="button" aria-label="Deschide meniul" aria-expanded="false">Meniu</button>
+  <a class="topbar-brand" href="#/">English <strong>B2</strong> Trainer</a>
+  <div class="topbar-search">
+    <input type="search" id="global-search" placeholder="Cauta un cuvant (EN sau RO)" aria-label="Cauta in vocabular" autocomplete="off">
+    <div class="search-results" id="search-results" hidden></div>
+  </div>
+  <button class="topbar-btn" id="btn-theme" type="button" aria-label="Schimba tema">Tema</button>
+</header>
+
+<div class="layout">
+  <nav class="sidebar" id="sidebar" aria-label="Meniu principal"></nav>
+  <div class="scrim" id="scrim" hidden></div>
+  <main id="main" class="main" tabindex="-1"></main>
+</div>
+
+<div class="toast-host" id="toast-host" aria-live="polite"></div>
+
+<!-- Data files. Order matters: index before themes. -->
+<script src="./data/tenses.js"></script>
+<script src="./data/grammar.js"></script>
+<script src="./data/diagnostic.js"></script>
+<script src="./data/mock.js"></script>
+<script src="./data/vocab-index.js"></script>
+<script src="./data/vocab/01-work.js"></script>
+<script src="./data/vocab/02-education.js"></script>
+<script src="./data/vocab/03-technology.js"></script>
+<script src="./data/vocab/04-money.js"></script>
+<script src="./data/vocab/05-health.js"></script>
+<script src="./data/vocab/06-food.js"></script>
+<script src="./data/vocab/07-travel.js"></script>
+<script src="./data/vocab/08-environment.js"></script>
+<script src="./data/vocab/09-media.js"></script>
+<script src="./data/vocab/10-relationships.js"></script>
+<script src="./data/vocab/11-feelings.js"></script>
+<script src="./data/vocab/12-home.js"></script>
+<script src="./data/vocab/13-shopping.js"></script>
+<script src="./data/vocab/14-law.js"></script>
+<script src="./data/vocab/15-politics.js"></script>
+<script src="./data/vocab/16-science.js"></script>
+<script src="./data/vocab/17-arts.js"></script>
+<script src="./data/vocab/18-sport.js"></script>
+<script src="./data/vocab/19-places.js"></script>
+<script src="./data/vocab/20-communication.js"></script>
+<script src="./data/vocab/21-time.js"></script>
+<script src="./data/vocab/22-problems.js"></script>
+<script src="./data/vocab/23-describing.js"></script>
+<script src="./data/vocab/24-linking.js"></script>
+<script src="./data/vocab/25-phrasal-verbs-1.js"></script>
+<script src="./data/vocab/26-phrasal-verbs-2.js"></script>
+<script src="./data/vocab/27-collocations.js"></script>
+<script src="./data/vocab/28-idioms.js"></script>
+<script src="./data/vocab/29-academic.js"></script>
+<script src="./data/vocab/30-events.js"></script>
+
+<!-- Application modules. -->
+<script src="./js/storage.js"></script>
+<script src="./js/ui.js"></script>
+<script src="./js/srs.js"></script>
+<script src="./js/exercises.js"></script>
+<script src="./js/lessons.js"></script>
+<script src="./js/vocab.js"></script>
+<script src="./js/exams.js"></script>
+<script src="./js/dashboard.js"></script>
+<script src="./js/devcheck.js"></script>
+<script src="./js/app.js"></script>
+</body>
+</html>
