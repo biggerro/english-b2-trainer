@@ -8,7 +8,7 @@
    The list is exposed on self.E360_PRECACHE so that devcheck.js can read it with a plain
    script tag, which also works from file://. */
 
-var CACHE_NAME = 'e360-b2-v1';
+var CACHE_NAME = 'e360-b2-v2';
 
 self.E360_PRECACHE = [
   './',

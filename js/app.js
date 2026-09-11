@@ -225,8 +225,22 @@ window.E360 = window.E360 || {};
   function registerSW() {
     if (location.protocol === 'file:') return;      // no service worker from the folder
     if (!('serviceWorker' in navigator)) return;
+    // When a new version takes over an already installed app, reload once so the phone shows it
+    // straight away instead of on the next launch. Skipped on the very first install.
+    var hadController = !!navigator.serviceWorker.controller;
+    var reloaded = false;
+    navigator.serviceWorker.addEventListener('controllerchange', function () {
+      if (!hadController || reloaded) return;
+      reloaded = true;
+      location.reload();
+    });
     window.addEventListener('load', function () {
-      navigator.serviceWorker.register('./sw.js').catch(function () { /* offline install is optional */ });
+      navigator.serviceWorker.register('./sw.js').then(function (reg) {
+        // Installed apps can stay open for days: look for a new version whenever they come back.
+        document.addEventListener('visibilitychange', function () {
+          if (document.visibilityState === 'visible') reg.update().catch(function () {});
+        });
+      }).catch(function () { /* offline install is optional */ });
     });
   }
 
